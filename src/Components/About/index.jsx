@@ -288,7 +288,7 @@ export default function About() {
       </div>
       {/* choosing area end */}
       {/* choosing area start */}
-      <div
+      {/* <div
         className="choosing-area section-padding"
         style={{ backgroundColor: "#f7f7f7" }}
       >
@@ -353,7 +353,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
