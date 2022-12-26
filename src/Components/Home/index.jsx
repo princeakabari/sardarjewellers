@@ -81,7 +81,7 @@ export default function Home() {
                     <h1 className="title maintitle">
                       Exclusive Design Collection
                     </h1>
-                    <p>Casual line with short design in 100% suede Diamond</p>
+                    {/* <p>Casual line with short design in 100% suede Diamond</p> */}
                     <div className="shop-btn">
                       <Link
                         className="axil-btn btn-bg-secondary right-icon"

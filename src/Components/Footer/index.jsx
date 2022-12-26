@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -36,15 +37,13 @@ export default function Footer() {
                     </p>
                     <ul className="support-list-item">
                       <li>
-                        <a href="mailto:example@domain.com">
-                          <i className="fal fa-envelope-open" />
-                          example@domain.com
+                        Mail: {" "}
+                        <a href="mailto:pravinbhakbari@gmail.com">
+                        pravinbhakbari@gmail.com
                         </a>
                       </li>
-                      <li>
-                        <a href="tel:919377009160">
-                          <i className="fal fa-phone-alt" /> (+91)9377009160
-                        </a>
+                      <li>Phone: {" "}
+                        <a href="tel:919377009160">(+91)9377009160</a>
                       </li>
                       {/* <li><i class="fal fa-map-marker-alt"></i> 685 Market Street,  <br> Las Vegas, LA 95820, <br> United States.</li> */}
                     </ul>
@@ -58,16 +57,16 @@ export default function Footer() {
                   <div className="inner">
                     <ul>
                       <li>
-                        <a href="my-account.html">Gold Collection</a>
+                        <Link to="/goldproducts">Gold Collection</Link>
                       </li>
                       <li>
-                        <a href="sign-up.html">Sliver Collection</a>
+                        <Link to="/sliverproducts">Sliver Collection</Link>
                       </li>
                       <li>
-                        <a href="cart.html">About us</a>
+                        <Link to="/about">About us</Link>
                       </li>
                       <li>
-                        <a href="cart.html">Contact us</a>
+                        <Link to="/contact">Contact us</Link>
                       </li>
                     </ul>
                   </div>
@@ -81,13 +80,13 @@ export default function Footer() {
                   <div className="inner">
                     <ul>
                       <li>
-                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a>Privacy Policy</a>
                       </li>
                       <li>
-                        <a href="terms-of-service.html">Terms Of Use</a>
+                        <a>Terms Of Use</a>
                       </li>
                       <li>
-                        <a href="#">FAQ</a>
+                        <a>FAQ</a>
                       </li>
                     </ul>
                   </div>
@@ -107,10 +106,10 @@ export default function Footer() {
             <div className="row align-items-center">
               <div className="col-xl-4">
                 <div className="social-share">
-                  <a href="#">
+                  <a href="https://www.facebook.com/sardarjewellers.kalavad">
                     <i className="fab fa-facebook-f" />
                   </a>
-                  <a href="#">
+                  <a href="https://www.instagram.com/sardar_jewellers_kalavad/">
                     <i className="fab fa-instagram" />
                   </a>
                 </div>

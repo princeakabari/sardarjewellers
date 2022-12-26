@@ -154,10 +154,10 @@ export default function Navbar() {
               </div>
 
               <div className="social-share" style={{ paddingLeft: "20px" }}>
-                <a href="#">
+                <a href="https://www.facebook.com/sardarjewellers.kalavad">
                   <i className="fab fa-facebook-f" />
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/sardar_jewellers_kalavad/">
                   <i className="fab fa-instagram" />
                 </a>
               </div>
