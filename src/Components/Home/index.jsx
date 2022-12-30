@@ -18,7 +18,7 @@ export default function Home() {
   const [categoriesData, setcategoriesData] = useState([]);
   const [goldData, setgoldData] = useState([]);
   const [sliverData, setSliverData] = useState([]);
-  console.log(sliverData);
+  // console.log(sliverData);
   useEffect(() => {
     getcategoryData();
     getGoldData();

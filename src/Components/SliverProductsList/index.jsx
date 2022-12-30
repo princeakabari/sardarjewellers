@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { sliverProductListData } from "../../service/auth.service";
-import { listBody } from "../../utils/helper";
+import { listBody, URL } from "../../utils/helper";
 import { useLocation } from "react-router-dom";
 
 export default function SliverProductList() {
@@ -90,7 +90,10 @@ export default function SliverProductList() {
                     <div className="axil-product product-style-four">
                       <div className="thumbnail">
                         <a>
-                          <img src={card.productImg} alt="Product Images" />
+                          <img
+                            src={URL + card.productImg}
+                            alt="Product Images"
+                          />
                         </a>
                       </div>
                       <div className="product-content">

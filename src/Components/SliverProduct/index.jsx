@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 
 export default function SliverProduct() {
   const [productData, setproductData] = useState([]);
-  console.log(productData);
+  // console.log(productData);
   useEffect(() => {
     getcategoryData();
   }, []);

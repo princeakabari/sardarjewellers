@@ -15,7 +15,7 @@ export default function GoldProductList() {
     } else {
       userId = "";
     }
-    console.log("id", userId);
+    // console.log("id", userId);
     getcategoryData(userId);
   }, [search]);
 

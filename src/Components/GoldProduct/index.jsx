@@ -6,7 +6,7 @@ export default function GoldProduct() {
   const [productData, setproductData] = useState();
   const location = useLocation();
   const { search } = location;
-  console.log(productData);
+  // console.log(productData);
   useEffect(() => {
     let userId;
     if (search.split("=").length > 0) {
