@@ -183,54 +183,52 @@ export default function About() {
           <div className="row">
             <div className="col-md-12">
               <div className="section-title">
-                <h2
-                  className="title"
+                <h3
+                  className="blog-title"
                   style={{ animation: "none", marginBottom: 10 }}
                 >
                   Company Overview
-                </h2>
-                <p className="aboutbox">
+                </h3>
+              <blockquote className="aboutbox">
+
+                <p>
                   Founded in 31 oct. 2012 by Sardar Jewellers. Sardar Jewellers
                   have a more than 10 year experience and expertise in wonderful
                   worlds of jewelry. Sardar Jewellerrs have WELL trained staff
                   with experience of 10 year. we provide next level design for
                   you.
                 </p>
+              </blockquote>
+
               </div>
             </div>
           </div>
           <div className="row mbn-30" style={{ paddingTop: "20px" }}>
             <div className="col-md-12">
-              <h3 className="blog-title">QUALITY</h3>
+              <h3 className="blog-title">Our vision</h3>
               <blockquote className="aboutbox">
                 <p>
-                  Radhika Jeweltech Limited deals only in jewelry certified by
-                  BIS Hallmark. Since the system of hallmarking was legally
-                  introduced, RadhikaJewellers had been certified under the
-                  system. The quality Assurance department monitors and examines
-                  the jewelry designs inwarded in the stock to match the
-                  standard, thus the qualitystandard of gold Jewelry dealt with
-                  is maintained throughout and therefore, our customer’s trust
-                  is sustained.
+                Our vision is our framework that guides our business and
+                everything about it. To Understand and delight the world,
+                translating everyone's dream and personality into jewellery.
+                And spread the happiness from it to all.
                 </p>
               </blockquote>
             </div>
             <div className="col-md-12">
-              <h3 className="blog-title">HUMAN CAPITAL</h3>
+              <h3 className="blog-title">Our Mision</h3>
               <blockquote className="aboutbox">
                 <p>
-                  Radhika Jeweltech Limited employs more than 30 employees
-                  currently. Our staff is multilingual with in-depth experience
-                  in dealing with customers and has in-depth knowledge of gold
-                  jewelry.
+                Every client that leaves our store knows more about jewelry
+                because we passionately told him about it.
                 </p>
               </blockquote>
             </div>
             <div className="col-md-12">
-              <h3 className="blog-title">PRESENCE</h3>
+              <h3 className="blog-title">Presence</h3>
               <blockquote className="aboutbox">
                 <p>
-                  Currently Radhika Jeweltech Limited is situated in Rajkot with
+                  Currently Sardar Jewellers is situated in Rajkot with
                   a single outlet and we are well known to our customers for our
                   best jewelry designs, our quality standards and the services
                   provided throughout Gujarat.
@@ -240,7 +238,7 @@ export default function About() {
             <div className="col-md-12">
               <h3
                 className="blog-title "
-                style={{ textTransform: "uppercase" }}
+                
               >
                 Corporate Values
               </h3>
