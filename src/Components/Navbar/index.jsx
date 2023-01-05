@@ -82,7 +82,7 @@ export default function Navbar() {
                       <ul className="axil-submenu">
                         {categoriesData?.map((card) => {
                           return (
-                            <li>
+                            <li key={card._id}>
                               <Link to={`/goldproducts?cid=${card._id}`}>
                                 {card.goldenName}
                               </Link>
@@ -96,7 +96,7 @@ export default function Navbar() {
                       <ul className="axil-submenu">
                         {slivercategoriesData?.map((card) => {
                           return (
-                            <li>
+                            <li key={card._id}>
                               <Link to={`/sliverproducts?cid=${card._id}`}>
                                 {card.sliverName}
                               </Link>
@@ -135,15 +135,15 @@ export default function Navbar() {
                       <i className="flaticon-magnifying-glass" />
                     </button>
                   </li>
-                  <li className="axil-search d-xl-none d-block">
+                  {/* <li className="axil-search d-xl-none d-block">
                     <a
-                      href="javascript:void(0)"
+                      
                       className="header-search-icon"
                       title="Search"
                     >
                       <i className="flaticon-magnifying-glass" />
                     </a>
-                  </li>
+                  </li> */}
 
                   <li className="axil-mobile-toggle">
                     <button className="menu-btn mobile-nav-toggler">

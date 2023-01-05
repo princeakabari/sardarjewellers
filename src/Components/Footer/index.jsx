@@ -37,13 +37,13 @@ export default function Footer() {
                     </p>
                     <ul className="support-list-item">
                       <li>
-                        Mail: {" "}
-                        <a href="mailto:pravinbhakbari@gmail.com">
-                        pravinbhakbari@gmail.com
+                        Mail:{" "}
+                        <a href="mailto:sardarjewellers831@gmail.com">
+                          sardarjewellers831@gmail.com
                         </a>
                       </li>
-                      <li>Phone: {" "}
-                        <a href="tel:919377009160">(+91)9377009160</a>
+                      <li>
+                        Phone: <a href="tel:919377009160">(+91)9377009160</a>
                       </li>
                       {/* <li><i class="fal fa-map-marker-alt"></i> 685 Market Street,  <br> Las Vegas, LA 95820, <br> United States.</li> */}
                     </ul>

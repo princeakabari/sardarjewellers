@@ -6,7 +6,7 @@ export const validPaasword =
   /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 export const ENDPOINTURL = "https://sjbackend.up.railway.app/api/v1";
 // export const ENDPOINTURL = "http://localhost:8080/api/v1";
-export const URL = "https://sjbackend.up.railway.app/api/v1";
+export const URL = "https://sjbackend.up.railway.app/";
 // export const URL = "https://fea-backend.herokuapp.com/";
 
 export const listBody = (data) => {

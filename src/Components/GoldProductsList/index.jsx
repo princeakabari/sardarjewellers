@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { goldProductsListData } from "../../service/auth.service";
-import { listBody } from "../../utils/helper";
+import { listBody, URL } from "../../utils/helper";
 import { Bars } from "react-loader-spinner";
 
 export default function GoldProductList() {
@@ -89,12 +89,12 @@ export default function GoldProductList() {
             <div className="new-arrivals-product-activation slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide row pt--50">
               {productData?.map((card) => {
                 return (
-                  <div className="col-3">
+                  <div className="col-3" key={card._id}>
                     <div className="axil-product product-style-four">
                       <div className="thumbnail">
                         <a>
                           <img
-                            src={card.goldenproductImg}
+                            src={URL + card.goldenproductImg}
                             alt="Product Images"
                           />
                         </a>

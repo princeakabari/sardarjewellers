@@ -86,7 +86,7 @@ export default function SliverProductList() {
             <div className="new-arrivals-product-activation slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide row pt--50">
               {productData?.map((card) => {
                 return (
-                  <div className="col-3">
+                  <div className="col-3" key={card._id}>
                     <div className="axil-product product-style-four">
                       <div className="thumbnail">
                         <a>

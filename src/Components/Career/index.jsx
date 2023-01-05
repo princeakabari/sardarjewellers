@@ -59,7 +59,7 @@ export default function Career() {
                 {categoriesData?.map((card) => {
                   return (
                     <>
-                      <div className="axil-privacy-policy">
+                      <div className="axil-privacy-policy" key={card._id}>
                         <span className="policy-published">Post name:</span>
                       </div>
                       <p>

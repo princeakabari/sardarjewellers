@@ -6,7 +6,7 @@ import {
   goldProductsListData,
   sliverProductListData,
 } from "../../service/auth.service";
-import { listBody } from "../../utils/helper";
+import { listBody, URL } from "../../utils/helper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
@@ -160,13 +160,16 @@ export default function Home() {
               <div className="categrie-product-activation slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide row">
                 {categoriesData?.map((card) => {
                   return (
-                    <div className="slick-single-layout col col-lg-3">
+                    <div
+                      className="slick-single-layout col col-lg-3"
+                      key={card._id}
+                    >
                       <div className="categrie-product">
                         <Link to={`goldproducts?cid=${card._id}`}>
                           <img
                             className="img-fluid"
                             src={card.goldenImg}
-                            alt="product categorie"
+                            alt="pc"
                           />
                           <h6 className="cat-title">{card.goldenName}</h6>
                         </Link>
@@ -297,12 +300,12 @@ export default function Home() {
                 <div className="new-arrivals-product-activation slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide row">
                   {goldData?.map((card) => {
                     return (
-                      <div className="col-3">
+                      <div className="col-3" key={card._id}>
                         <div className="axil-product product-style-four">
                           <div className="thumbnail">
                             <a>
                               <img
-                                src={card.goldenproductImg}
+                                src={URL + card.goldenproductImg}
                                 alt="Product Images"
                               />
                             </a>
@@ -319,110 +322,110 @@ export default function Home() {
                     );
                   })}
                   {goldData?.length === 0 ? (
-                <div className="text-center pt--30">
-                  <svg
-                    width="80"
-                    height="80"
-                    fill="#0308d0"
-                    viewBox="0 0 135 140"
-                    xmlns="http://www.w3.org/2000/svg"
-                    data-testid="bars-svg"
-                  >
-                    <rect y="10" width="15" height="120" rx="6">
-                      <animate
-                        attributeName="height"
-                        begin="0.5s"
-                        dur="1s"
-                        values="120;110;100;90;80;70;60;50;40;140;120"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                      <animate
-                        attributeName="y"
-                        begin="0.5s"
-                        dur="1s"
-                        values="10;15;20;25;30;35;40;45;50;0;10"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </rect>
-                    <rect x="30" y="10" width="15" height="120" rx="6">
-                      <animate
-                        attributeName="height"
-                        begin="0.25s"
-                        dur="1s"
-                        values="120;110;100;90;80;70;60;50;40;140;120"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                      <animate
-                        attributeName="y"
-                        begin="0.25s"
-                        dur="1s"
-                        values="10;15;20;25;30;35;40;45;50;0;10"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </rect>
-                    <rect x="60" width="15" height="140" rx="6">
-                      <animate
-                        attributeName="height"
-                        begin="0s"
-                        dur="1s"
-                        values="120;110;100;90;80;70;60;50;40;140;120"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                      <animate
-                        attributeName="y"
-                        begin="0s"
-                        dur="1s"
-                        values="10;15;20;25;30;35;40;45;50;0;10"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </rect>
-                    <rect x="90" y="10" width="15" height="120" rx="6">
-                      <animate
-                        attributeName="height"
-                        begin="0.25s"
-                        dur="1s"
-                        values="120;110;100;90;80;70;60;50;40;140;120"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                      <animate
-                        attributeName="y"
-                        begin="0.25s"
-                        dur="1s"
-                        values="10;15;20;25;30;35;40;45;50;0;10"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </rect>
-                    <rect x="120" y="10" width="15" height="120" rx="6">
-                      <animate
-                        attributeName="height"
-                        begin="0.5s"
-                        dur="1s"
-                        values="120;110;100;90;80;70;60;50;40;140;120"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                      <animate
-                        attributeName="y"
-                        begin="0.5s"
-                        dur="1s"
-                        values="10;15;20;25;30;35;40;45;50;0;10"
-                        calcMode="linear"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </rect>
-                  </svg>
-                </div>
-              ) : (
-                <></>
-              )}
+                    <div className="text-center pt--30">
+                      <svg
+                        width="80"
+                        height="80"
+                        fill="#0308d0"
+                        viewBox="0 0 135 140"
+                        xmlns="http://www.w3.org/2000/svg"
+                        data-testid="bars-svg"
+                      >
+                        <rect y="10" width="15" height="120" rx="6">
+                          <animate
+                            attributeName="height"
+                            begin="0.5s"
+                            dur="1s"
+                            values="120;110;100;90;80;70;60;50;40;140;120"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                          <animate
+                            attributeName="y"
+                            begin="0.5s"
+                            dur="1s"
+                            values="10;15;20;25;30;35;40;45;50;0;10"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                        </rect>
+                        <rect x="30" y="10" width="15" height="120" rx="6">
+                          <animate
+                            attributeName="height"
+                            begin="0.25s"
+                            dur="1s"
+                            values="120;110;100;90;80;70;60;50;40;140;120"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                          <animate
+                            attributeName="y"
+                            begin="0.25s"
+                            dur="1s"
+                            values="10;15;20;25;30;35;40;45;50;0;10"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                        </rect>
+                        <rect x="60" width="15" height="140" rx="6">
+                          <animate
+                            attributeName="height"
+                            begin="0s"
+                            dur="1s"
+                            values="120;110;100;90;80;70;60;50;40;140;120"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                          <animate
+                            attributeName="y"
+                            begin="0s"
+                            dur="1s"
+                            values="10;15;20;25;30;35;40;45;50;0;10"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                        </rect>
+                        <rect x="90" y="10" width="15" height="120" rx="6">
+                          <animate
+                            attributeName="height"
+                            begin="0.25s"
+                            dur="1s"
+                            values="120;110;100;90;80;70;60;50;40;140;120"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                          <animate
+                            attributeName="y"
+                            begin="0.25s"
+                            dur="1s"
+                            values="10;15;20;25;30;35;40;45;50;0;10"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                        </rect>
+                        <rect x="120" y="10" width="15" height="120" rx="6">
+                          <animate
+                            attributeName="height"
+                            begin="0.5s"
+                            dur="1s"
+                            values="120;110;100;90;80;70;60;50;40;140;120"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                          <animate
+                            attributeName="y"
+                            begin="0.5s"
+                            dur="1s"
+                            values="10;15;20;25;30;35;40;45;50;0;10"
+                            calcMode="linear"
+                            repeatCount="indefinite"
+                          ></animate>
+                        </rect>
+                      </svg>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
             </div>
@@ -442,11 +445,14 @@ export default function Home() {
                 <div className="new-arrivals-product-activation slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide row">
                   {sliverData?.map((card) => {
                     return (
-                      <div className="col-3">
+                      <div className="col-3" key={card._id}>
                         <div className="axil-product product-style-four">
                           <div className="thumbnail">
                             <a>
-                              <img src={card.productImg} alt="Product Images" />
+                              <img
+                                src={URL + card.productImg}
+                                alt="Product Images"
+                              />
                             </a>
                           </div>
                           <div className="product-content">

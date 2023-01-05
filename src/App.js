@@ -30,26 +30,6 @@ function App() {
             }
           />
           <Route
-            path="/gold"
-            element={
-              <>
-                <Navbar />
-                <GoldProduct />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/sliver"
-            element={
-              <>
-                <Navbar />
-                <SliverProduct />
-                <Footer />
-              </>
-            }
-          />
-          <Route
             path="/sliverproducts"
             element={
               <>
