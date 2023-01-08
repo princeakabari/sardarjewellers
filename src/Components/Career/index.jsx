@@ -18,10 +18,13 @@ export default function Career() {
         perPage: 1000,
       })
     );
+    console.log("OK", response);
     if (response) {
       setcategoriesData(response);
     }
   };
+  console.log("DATA", categoriesData);
+
   return (
     <>
       <main className="main-wrapper">
@@ -46,7 +49,6 @@ export default function Career() {
                   <h1 className="title">Career</h1>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -63,26 +65,67 @@ export default function Career() {
                         <span className="policy-published">Post name:</span>
                       </div>
                       <p>
-                        <strong>Job Location</strong>: Rajkot
+                        {card.jobLocation.length === 0 ? (
+                          ""
+                        ) : (
+                          <>
+                            <strong>Job Location</strong>: {card.jobLocation}
+                          </>
+                        )}
                         <br />
-                        <strong>Department</strong>: Operation Department
+                        {card.department.length === 0 ? (
+                          ""
+                        ) : (
+                          <>
+                            <strong>Department</strong>: {card.department}
+                          </>
+                        )}
                         <br />
-                        <strong>Gender</strong>: Male or Female
+                        {card.gender.length === 0 ? (
+                          ""
+                        ) : (
+                          <>
+                            <strong>Gender</strong>: {card.gender}
+                          </>
+                        )}
                         <br />
-                        <strong>Experience</strong>: Fresher / Experience both
-                        can Apply
+                        {card.experience.length === 0 ? (
+                          ""
+                        ) : (
+                          <>
+                            <strong>Experience</strong>: {card.experience}
+                          </>
+                        )}
                         <br />
-                        <strong>Training</strong>: Training Will Be Provided By
-                        Company
+                        {card.training.length === 0 ? (
+                          ""
+                        ) : (
+                          <>
+                            <strong>Training</strong>: {card.training}
+                          </>
+                        )}
                         <br />
-                        <strong>Salary</strong>: Depends On Interview
+                        {card.salary.length === 0 ? (
+                          ""
+                        ) : (
+                          <>
+                            <strong>Salary</strong>: {card.salary}
+                          </>
+                        )}
                         <br />
-                        <strong>Other Benefits</strong>: PF And Employees State
-                        Insurance Corporation (ESIC) Benefit
+                        {card.otherBenefits.length === 0 ? (
+                          ""
+                        ) : (
+                          <>
+                            <strong>Other Benefits</strong>:{" "}
+                            {card.otherBenefits}
+                          </>
+                        )}
                       </p>
                     </>
                   );
                 })}
+                {categoriesData.length === 0 ? "May be currently not open any position" : ""}
               </div>
             </div>
           </div>

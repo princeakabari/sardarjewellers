@@ -86,15 +86,19 @@ export default function Navbar() {
                   </div>
                   <ul className="mainmenu">
                     <li>
-                      <Link to="/">Home</Link>
+                      <Link to="/" onClick={() => setMenu(false)}>
+                        Home
+                      </Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="/goldproducts">Gold</Link>
+                      <Link to="/goldproducts" onClick={() => setMenu(false)}>
+                        Gold
+                      </Link>
                       <ul className="axil-submenu">
                         {categoriesData?.map((card) => {
                           return (
                             <li key={card._id}>
-                              <Link to={`/goldproducts?cid=${card._id}`}>
+                              <Link to={`/goldproducts?cid=${card._id}`} onClick={() => setMenu(false)}>
                                 {card.goldenName}
                               </Link>
                             </li>
@@ -103,12 +107,14 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="/sliverproducts">Sliver</Link>
+                      <Link to="/sliverproducts" onClick={() => setMenu(false)}>
+                        Sliver
+                      </Link>
                       <ul className="axil-submenu">
                         {slivercategoriesData?.map((card) => {
                           return (
                             <li key={card._id}>
-                              <Link to={`/sliverproducts?cid=${card._id}`}>
+                              <Link to={`/sliverproducts?cid=${card._id}`} onClick={() => setMenu(false)}>
                                 {card.productName}
                               </Link>
                             </li>
@@ -117,13 +123,19 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li>
-                      <Link to="/about">About</Link>
+                      <Link to="/about" onClick={() => setMenu(false)}>
+                        About
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/career">Career</Link>
+                      <Link to="/career" onClick={() => setMenu(false)}>
+                        Career
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/contact">Contact</Link>
+                      <Link to="/contact" onClick={() => setMenu(false)}>
+                        Contact
+                      </Link>
                     </li>
                   </ul>
                 </nav>
