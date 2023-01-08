@@ -44,7 +44,7 @@ export const goldencategoryData = (body) => {
 
 //sliver
 export const slivercategoryData = (body) => {
-  return post(`${ENDPOINTURL}/sliver/list`, body);
+  return post(`${ENDPOINTURL}/product/list`, body);
 };
 
 export const sliverProductListData = (body) => {

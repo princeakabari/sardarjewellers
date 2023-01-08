@@ -22,14 +22,21 @@
   .main-slider-style-7 {
     background-position: left;
   }
-  
 }
+
+@media only screen and (min-width: 1024px) {
+  .axil-mobile-toggle .menu-btn i {
+    display: none;
+  }
+}
+
 .aboutbox {
   background: #fff2df;
   padding: 30px;
   border-left: 5px solid #9a6210;
   border-radius: 10px;
 }
-#bars-loading{
-  display: block
+#bars-loading {
+  display: block;
 }
+

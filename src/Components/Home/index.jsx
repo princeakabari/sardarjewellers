@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {
-  bannerHndlerData,
-  categoryHndlerData,
   goldencategoryData,
   goldProductsListData,
+  slivercategoryData,
   sliverProductListData,
 } from "../../service/auth.service";
 import { listBody, URL } from "../../utils/helper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -18,11 +15,13 @@ export default function Home() {
   const [categoriesData, setcategoriesData] = useState([]);
   const [goldData, setgoldData] = useState([]);
   const [sliverData, setSliverData] = useState([]);
+  const [slivercategoriesData, setSlivercategoriesData] = useState([]);
   // console.log(sliverData);
   useEffect(() => {
     getcategoryData();
     getGoldData();
     getSliverData();
+    getSlivercategoryData();
   }, []);
 
   const getcategoryData = async () => {
@@ -36,6 +35,19 @@ export default function Home() {
     );
     if (response) {
       setcategoriesData(response);
+    }
+  };
+  const getSlivercategoryData = async () => {
+    const response = await slivercategoryData(
+      listBody({
+        where: {
+          isActive: true,
+        },
+        perPage: 1000,
+      })
+    );
+    if (response) {
+      setSlivercategoriesData(response);
     }
   };
   const getGoldData = async () => {
@@ -168,10 +180,29 @@ export default function Home() {
                         <Link to={`goldproducts?cid=${card._id}`}>
                           <img
                             className="img-fluid"
-                            src={card.goldenImg}
+                            src={URL + card.goldenImg}
                             alt="pc"
                           />
                           <h6 className="cat-title">{card.goldenName}</h6>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+                {slivercategoriesData?.map((card) => {
+                  return (
+                    <div
+                      className="slick-single-layout col col-lg-3"
+                      key={card._id}
+                    >
+                      <div className="categrie-product">
+                        <Link to={`goldproducts?cid=${card._id}`}>
+                          <img
+                            className="img-fluid"
+                            src={URL + card.productImg}
+                            alt="pc"
+                          />
+                          <h6 className="cat-title">{card.productName}</h6>
                         </Link>
                       </div>
                     </div>

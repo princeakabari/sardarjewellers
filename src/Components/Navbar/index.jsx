@@ -9,6 +9,7 @@ import { listBody } from "../../utils/helper";
 export default function Navbar() {
   const [categoriesData, setcategoriesData] = useState([]);
   const [slivercategoriesData, setslivercategoriesData] = useState([]);
+  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
     getcategoryData();
@@ -42,6 +43,11 @@ export default function Navbar() {
       setslivercategoriesData(response);
     }
   };
+
+  const openMenu = () => {
+    setMenu((prevCheck) => !prevCheck);
+  };
+
   return (
     <>
       <header className="header axil-header header-style-5">
@@ -51,10 +57,10 @@ export default function Navbar() {
           <div className="container">
             <div className="header-navbar">
               <div className="header-brand">
-                <a href="index-2.html" className="logo logo-dark">
+                <Link to="/" className="logo logo-dark">
                   <img src="img/logomain.png" width={150} alt="Site Logo" />
-                </a>
-                <a href="index-2.html" className="logo logo-light">
+                </Link>
+                <a className="logo logo-light">
                   <img
                     src="assets/images/logo/logo-light.png"
                     width={150}
@@ -62,14 +68,19 @@ export default function Navbar() {
                   />
                 </a>
               </div>
-              <div className="header-main-nav">
+              <div
+                className={menu ? "header-main-nav open" : "header-main-nav"}
+              >
                 {/* Start Mainmanu Nav */}
                 <nav className="mainmenu-nav">
-                  <button className="mobile-close-btn mobile-nav-toggler">
+                  <button
+                    className="mobile-close-btn mobile-nav-toggler"
+                    onClick={() => openMenu()}
+                  >
                     <i className="fas fa-times" />
                   </button>
                   <div className="mobile-nav-brand">
-                    <a href="index-2.html" className="logo">
+                    <a className="logo">
                       <img src="img/logomain.png" alt="Site Logo" />
                     </a>
                   </div>
@@ -98,7 +109,7 @@ export default function Navbar() {
                           return (
                             <li key={card._id}>
                               <Link to={`/sliverproducts?cid=${card._id}`}>
-                                {card.sliverName}
+                                {card.productName}
                               </Link>
                             </li>
                           );
@@ -119,46 +130,20 @@ export default function Navbar() {
                 {/* End Mainmanu Nav */}
               </div>
 
-              <div className="header-action">
-                <ul className="action-list">
-                  <li className="axil-search d-xl-block d-none">
-                    <input
-                      type="search"
-                      className="placeholder product-search-input"
-                      name="search2"
-                      id="search2"
-                      maxLength={128}
-                      placeholder="What are you looking for?"
-                      autoComplete="off"
-                    />
-                    <button type="submit" className="icon wooc-btn-search">
-                      <i className="flaticon-magnifying-glass" />
-                    </button>
-                  </li>
-                  {/* <li className="axil-search d-xl-none d-block">
-                    <a
-                      
-                      className="header-search-icon"
-                      title="Search"
-                    >
-                      <i className="flaticon-magnifying-glass" />
-                    </a>
-                  </li> */}
-
-                  <li className="axil-mobile-toggle">
-                    <button className="menu-btn mobile-nav-toggler">
-                      <i className="flaticon-menu-2" />
-                    </button>
-                  </li>
-                </ul>
-              </div>
-
               <div className="social-share" style={{ paddingLeft: "20px" }}>
                 <a href="https://www.facebook.com/sardarjewellers.kalavad">
                   <i className="fab fa-facebook-f" />
                 </a>
                 <a href="https://www.instagram.com/sardar_jewellers_kalavad/">
                   <i className="fab fa-instagram" />
+                </a>
+                <a className="axil-mobile-toggle">
+                  <button
+                    className="menu-btn mobile-nav-toggler"
+                    onClick={() => openMenu()}
+                  >
+                    <i className="flaticon-menu-2" />
+                  </button>
                 </a>
               </div>
             </div>

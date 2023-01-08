@@ -2285,7 +2285,7 @@ input[type="submit"]:hover {
   margin-bottom: 34px;
 }
 .axil-about-area .about-content.content-right {
-  padding-left:   0px;
+  padding-left: 0px;
 }
 @media only screen and (max-width: 1199px) {
   .axil-about-area .about-content.content-right {
@@ -2745,10 +2745,11 @@ button.axil-btn.wishlist-btn:hover:before {
   text-align: center;
   border-radius: 6px;
   margin-bottom: 30px;
-  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.04);
+  /* box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.04); */
   transition: 0.5s ease-in-out;
-  z-index: 1;
+  /* z-index: 1; */
   margin-top: 30px;
+  /* border: 1px solid; */
 }
 .categrie-product:before {
   content: "";
@@ -2780,7 +2781,7 @@ button.axil-btn.wishlist-btn:hover:before {
 }
 .categrie-product:hover {
   border-color: var(--color-white);
-  box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.1); */
 }
 .categrie-product:hover:before {
   transform: scale(1.1);
@@ -11861,7 +11862,6 @@ body.open .closeMask {
   margin-bottom: 0;
 }
 .axil-footer-widget .support-list-item li {
-  
   position: relative;
 }
 .axil-footer-widget .support-list-item li a {
