@@ -16,15 +16,15 @@
 
         methods: function(e) {
             axilInit.w();
-            axilInit.contactForm();
+            // axilInit.contactForm();
             axilInit.axilBackToTop();
             axilInit.shopFilterWidget();
             axilInit.mobileMenuActivation();
             axilInit.menuLinkActive();
             axilInit.headerIconToggle();
-            axilInit.priceRangeSlider();
+            // axilInit.priceRangeSlider();
             axilInit.quantityRanger();
-            axilInit.axilSlickActivation();
+            // axilInit.axilSlickActivation();
             axilInit.countdownInit('.coming-countdown', '2022/10/01');
             axilInit.campaignCountdown('.campaign-countdown', '2022/10/01');
             axilInit.countdownInit('.poster-countdown', '2022/10/01');
@@ -36,12 +36,12 @@
             axilInit.sideOffcanvasToggle('.axil-search', '#header-search-modal');
             axilInit.sideOffcanvasToggle('.popup-close, .closeMask', "#offer-popup-modal");
             axilInit.stickyHeaderMenu();
-            axilInit.salActivation();
+            // axilInit.salActivation();
             axilInit.magnificPopupActivation();
             axilInit.colorVariantActive();
             axilInit.headerCampaignRemove();
             // axilInit.offerPopupActivation();
-            axilInit.axilMasonary();
+            // axilInit.axilMasonary();
             axilInit.counterUpActivation();
             axilInit.scrollSmoth();
            

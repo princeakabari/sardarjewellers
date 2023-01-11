@@ -98,7 +98,10 @@ export default function Navbar() {
                         {categoriesData?.map((card) => {
                           return (
                             <li key={card._id}>
-                              <Link to={`/goldproducts?cid=${card._id}`} onClick={() => setMenu(false)}>
+                              <Link
+                                to={`/goldproducts?cid=${card._id}`}
+                                onClick={() => setMenu(false)}
+                              >
                                 {card.goldenName}
                               </Link>
                             </li>
@@ -114,7 +117,10 @@ export default function Navbar() {
                         {slivercategoriesData?.map((card) => {
                           return (
                             <li key={card._id}>
-                              <Link to={`/sliverproducts?cid=${card._id}`} onClick={() => setMenu(false)}>
+                              <Link
+                                to={`/sliverproducts?cid=${card._id}`}
+                                onClick={() => setMenu(false)}
+                              >
                                 {card.productName}
                               </Link>
                             </li>
@@ -143,10 +149,13 @@ export default function Navbar() {
               </div>
 
               <div className="social-share" style={{ paddingLeft: "20px" }}>
-                <a href="https://www.facebook.com/sardarjewellers.kalavad">
+                <a target={"_blank"} title="Facebook" href="https://www.facebook.com/sardarjewellers.kalavad">
                   <i className="fab fa-facebook-f" />
                 </a>
-                <a href="https://www.instagram.com/sardar_jewellers_kalavad/">
+                <a
+                  target={"_blank"}
+                  href="https://www.instagram.com/sardar_jewellers_kalavad/"
+                >
                   <i className="fab fa-instagram" />
                 </a>
                 <a className="axil-mobile-toggle">

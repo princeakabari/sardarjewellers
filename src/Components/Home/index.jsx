@@ -4,6 +4,7 @@ import {
   goldProductsListData,
   slivercategoryData,
   sliverProductListData,
+  bannerHndlerData,
 } from "../../service/auth.service";
 import { listBody, URL } from "../../utils/helper";
 import "swiper/css";
@@ -11,17 +12,24 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination, Navigation } from "swiper";
 export default function Home() {
   const [categoriesData, setcategoriesData] = useState([]);
   const [goldData, setgoldData] = useState([]);
   const [sliverData, setSliverData] = useState([]);
   const [slivercategoriesData, setSlivercategoriesData] = useState([]);
+  const [bannerData, setBannerData] = useState([]);
   // console.log(sliverData);
   useEffect(() => {
     getcategoryData();
     getGoldData();
     getSliverData();
     getSlivercategoryData();
+    getBannerData();
   }, []);
 
   const getcategoryData = async () => {
@@ -76,12 +84,25 @@ export default function Home() {
       setSliverData(response);
     }
   };
+  const getBannerData = async () => {
+    const response = await bannerHndlerData(
+      listBody({
+        where: {
+          isActive: true,
+        },
+        perPage: 1000,
+      })
+    );
+    if (response) {
+      setBannerData(response);
+    }
+  };
   return (
     <>
       <div>
         <main className="main-wrapper">
           {/* Start Slider Area */}
-          <div className="axil-main-slider-area main-slider-style-7 bg_image--8">
+          {/* <div className="axil-main-slider-area main-slider-style-7 bg_image--8">
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-sm-8">
@@ -93,7 +114,7 @@ export default function Home() {
                     <h1 className="title maintitle">
                       Exclusive Design Collection
                     </h1>
-                    {/* <p>Casual line with short design in 100% suede Diamond</p> */}
+                  
                     <div className="shop-btn">
                       <Link
                         className="axil-btn btn-bg-secondary right-icon"
@@ -106,61 +127,47 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          {/* <Carousel
+            autoPlay
+            showArrows={false}
+            showStatus={false}
+            showIndicators={false}
+            showThumbs={false}
+            swipeable={false}
+            // transitionTime={2}
+          >
+            {bannerData.map((data) => {
+              return (
+                <div key={data._id}>
+                  <img src={data.bannerImg} />
+                </div>
+              );
+            })}
+          </Carousel> */}
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={false}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {bannerData.length > 0 &&
+              bannerData.map((data, index) => (
+                <SwiperSlide>
+                  <img className="banner" alt="bg" src={data.bannerImg} />
+                </SwiperSlide>
+              ))}
+          </Swiper>
           {/* End Slider Area */}
-          {/* Start Axil Product Poster Area  */}
-          <div className="axil-poster axil-section-gap pb--0">
-            <div className="container">
-              <div className="row g-lg-5 g-4">
-                <div className="col-lg-6">
-                  <div className="single-poster">
-                    <Link to="/goldproducts">
-                      <img
-                        src="https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-08.png"
-                        alt="eTrade promotion poster"
-                      />
-                      <div className="poster-content">
-                        <div className="inner">
-                          <h3 className="title">
-                            Gold <br />
-                            Collection
-                          </h3>
-                          <span className="sub-title">
-                            Get Exclusive
-                            <i className="fal fa-long-arrow-right" />
-                          </span>
-                        </div>
-                      </div>
-                      {/* End .poster-content */}
-                    </Link>
-                  </div>
-                  {/* End .single-poster */}
-                </div>
-                <div className="col-lg-6">
-                  <div className="single-poster">
-                    <Link to="/sliverproducts">
-                      <img
-                        src="https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-09.png"
-                        alt="eTrade promotion poster"
-                      />
-                      <div className="poster-content content-left">
-                        <div className="inner">
-                          <span className="sub-title">Get Exclusive</span>
-                          <h3 className="title">
-                            Sliver <br /> Collection
-                          </h3>
-                        </div>
-                      </div>
-                      {/* End .poster-content */}
-                    </Link>
-                  </div>
-                  {/* End .single-poster */}
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* End Axil Product Poster Area  */}
-          {/* Start Categorie Area  */}
+
           <div className="axil-categorie-area bg-color-white axil-section-gapcommon">
             <div className="container">
               <div className="section-title-wrapper">
@@ -317,6 +324,60 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* Start Axil Product Poster Area  */}
+          <div className="axil-poster axil-section-gap pb--2">
+            <div className="container">
+              <div className="row g-lg-5 g-4">
+                <div className="col-lg-6">
+                  <div className="single-poster">
+                    <Link to="/goldproducts">
+                      <img
+                        src="https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-08.png"
+                        alt="eTrade promotion poster"
+                      />
+                      <div className="poster-content">
+                        <div className="inner">
+                          <h3 className="title">
+                            Gold <br />
+                            Collection
+                          </h3>
+                          <span className="sub-title">
+                            Get Exclusive
+                            <i className="fal fa-long-arrow-right" />
+                          </span>
+                        </div>
+                      </div>
+                      {/* End .poster-content */}
+                    </Link>
+                  </div>
+                  {/* End .single-poster */}
+                </div>
+                <div className="col-lg-6">
+                  <div className="single-poster">
+                    <Link to="/sliverproducts">
+                      <img
+                        src="https://new.axilthemes.com/demo/template/etrade/assets/images/product/poster/poster-09.png"
+                        alt="eTrade promotion poster"
+                      />
+                      <div className="poster-content content-left">
+                        <div className="inner">
+                          <span className="sub-title">Get Exclusive</span>
+                          <h3 className="title">
+                            Sliver <br /> Collection
+                          </h3>
+                        </div>
+                      </div>
+                      {/* End .poster-content */}
+                    </Link>
+                  </div>
+                  {/* End .single-poster */}
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* End Axil Product Poster Area  */}
+          {/* Start Categorie Area  */}
+
           {/* End Categorie Area  */}
 
           {/* Start New Arrivals Product Area  */}
