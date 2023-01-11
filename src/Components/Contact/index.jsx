@@ -1,40 +1,41 @@
 import React from "react";
-import Footer from "../Footer";
-import Navbar from "../Navbar";
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import {
-  addproductsHandler,
-  categoryHndlerData,
-  contactHandler,
-} from "../../service/auth.service";
-import { listBody, validName } from "../../utils/helper";
+import { useState } from "react";
+import { contactHandler } from "../../service/auth.service";
 export default function Contact() {
-  const navigate = useNavigate();
-  const [cid, setCid] = useState("");
-  const [cidErr, setCidErr] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [firstNameErr, setFirstNameErr] = useState(false);
+
   const [lastName, setLastName] = useState("");
-  const [lastNameErr, setLastNameErr] = useState(false);
+
   const [email, setEmail] = useState("");
-  const [emailErr, setEmailErr] = useState(false);
+
   const [phoneNo, setPhoneNo] = useState("");
-  const [phoneNoErr, setPhoneNoErr] = useState(false);
+
   const [msg, setMsg] = useState("");
-  const [msgErr, setMsgErr] = useState(false);
+
+  const [errormsg, setErrorMsg] = useState("");
+
   const [selected, setSelected] = useState(false);
 
   const validation = () => {
+    console.log("test");
     let formIsValid = true;
-
+    if (!firstName && !lastName && !email && !phoneNo && !msg) {
+      formIsValid = false;
+    }
     return formIsValid;
   };
   const handleSubmit = (e) => {
-    if (validation() !== true) {
-    } else {
-      postData(e);
+    setErrorMsg("");
+    console.log("1");
+    if (validation() === true) {
+      console.log("ok");
       setSelected(true);
+      postData(e);
+      setErrorMsg(
+        "Your message has been successfully sent. We will contact you very soon!"
+      );
+    } else {
+      setErrorMsg("Please fill in required fields !");
     }
     e.preventDefault();
   };
@@ -84,7 +85,6 @@ export default function Contact() {
                   <h1 className="title">Contact With Us</h1>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -102,11 +102,9 @@ export default function Contact() {
                       work with us then drop us a line.
                     </p>
                     <form
-                      id="contact-form"
                       onSubmit={(e) => {
                         handleSubmit(e);
                       }}
-                      method="post"
                       className="axil-contact-form"
                     >
                       <div className="row row--10">
@@ -119,10 +117,7 @@ export default function Contact() {
                               type="text"
                               value={firstName}
                               placeholder="Enter first name"
-                              onChange={(e) => [
-                                setFirstName(e.target.value),
-                                setFirstNameErr(" "),
-                              ]}
+                              onChange={(e) => [setFirstName(e.target.value)]}
                             />
                           </div>
                         </div>
@@ -135,10 +130,7 @@ export default function Contact() {
                               type="text"
                               value={lastName}
                               placeholder="Enter last name"
-                              onChange={(e) => [
-                                setLastName(e.target.value),
-                                setLastNameErr(" "),
-                              ]}
+                              onChange={(e) => [setLastName(e.target.value)]}
                             />
                           </div>
                         </div>
@@ -151,10 +143,7 @@ export default function Contact() {
                               type="email"
                               value={email}
                               placeholder="Enter email"
-                              onChange={(e) => [
-                                setEmail(e.target.value),
-                                setEmailErr(" "),
-                              ]}
+                              onChange={(e) => [setEmail(e.target.value)]}
                             />
                           </div>
                         </div>
@@ -167,10 +156,7 @@ export default function Contact() {
                               type="text"
                               value={phoneNo}
                               placeholder="Enter phone no"
-                              onChange={(e) => [
-                                setPhoneNo(e.target.value),
-                                setPhoneNoErr(" "),
-                              ]}
+                              onChange={(e) => [setPhoneNo(e.target.value)]}
                             />
                           </div>
                         </div>
@@ -184,13 +170,11 @@ export default function Contact() {
                               rows={2}
                               value={msg}
                               placeholder="Enter message"
-                              onChange={(e) => [
-                                setMsg(e.target.value),
-                                setMsgErr(" "),
-                              ]}
+                              onChange={(e) => [setMsg(e.target.value)]}
                             />
                           </div>
                         </div>
+                        <div className="col-12">{errormsg}</div>
                         <div className="col-12">
                           <div className="form-group mb--0">
                             <button
@@ -240,6 +224,7 @@ export default function Contact() {
               <div className="mapouter">
                 <div className="gmap_canvas">
                   <iframe
+                    title="googlemap"
                     width={1080}
                     height={500}
                     id="gmap_canvas"

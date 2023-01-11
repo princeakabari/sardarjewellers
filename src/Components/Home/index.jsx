@@ -318,8 +318,9 @@ export default function Home() {
             </div>
           </div>
           {/* End Categorie Area  */}
+
           {/* Start New Arrivals Product Area  */}
-          <div className="axil-new-arrivals-product-area fullwidth-container bg-color-white axil-section-gap pb--0">
+          {/* <div className="axil-new-arrivals-product-area fullwidth-container bg-color-white axil-section-gap pb--0">
             <div className="container ml--xxl-0">
               <div className="product-area pb--50">
                 <div className="section-title-wrapper">
@@ -460,11 +461,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-          {/* End New Arrivals Product Area  */}
+          </div> */}
 
-          {/* Start New Arrivals Product Area  */}
-          <div className="axil-new-arrivals-product-area fullwidth-container bg-color-white axil-section-gap pb--0">
+          {/* <div className="axil-new-arrivals-product-area fullwidth-container bg-color-white axil-section-gap pb--0">
             <div className="container ml--xxl-0">
               <div className="product-area pb--50">
                 <div className="section-title-wrapper">
@@ -498,24 +497,10 @@ export default function Home() {
                     );
                   })}
                 </div>
-                {/* <div className="container">
-                  <div className="product-area pb--80">
-                    <div className="row">
-                      <div className="col-lg-12 text-center mt--20 mt_sm--0">
-                        <a className="axil-btn btn-bg-lighter btn-load-more">
-                          View All Products
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
-          </div>
-          {/* End New Arrivals Product Area  */}
-          {/* Start Testimonila Area  */}
+          </div> */}
 
-          {/* End New Arrivals Product Area  */}
           {/* Start Axil Newsletter Area  */}
           <div className="axil-newsletter-area axil-section-gap pt--0">
             <div className="container">

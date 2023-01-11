@@ -226,7 +226,7 @@ export default function About() {
               <h3 className="blog-title">Presence</h3>
               <blockquote className="aboutbox">
                 <p>
-                  Currently Sardar Jewellers is situated in Rajkot with
+                  Currently Sardar Jewellers is situated in Kalavad with
                   a single outlet and we are well known to our customers for our
                   best jewelry designs, our quality standards and the services
                   provided throughout Gujarat.

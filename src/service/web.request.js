@@ -67,8 +67,6 @@ export const post = async (url, data) => {
     .then((res) => {
       if (res.status === 200) {
         if (res.data?.success) {
-      console.log(res.data?.data.list)
-
           return res.data?.data.list ? res.data?.data.list : res.data;
         } else {
           return [];
